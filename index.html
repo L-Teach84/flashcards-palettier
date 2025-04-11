@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMA Flashcards</title>
+    <title>Flashcards Palettier</title>
     <style>
         body {
             display: flex;
@@ -53,7 +53,7 @@
         }
 
         .flashcard-front {
-            background-color: #26f7db;
+            background-color: #74dab6;
             font-weight: bold;
         }
 
@@ -94,14 +94,14 @@
 <body>
     <div class="flashcard" onclick="flipCard(this)">
         <div class="flashcard-inner">
-            <div class="flashcard-front" data-code="PTAC2">
+            <div class="flashcard-front" data-code="Capa">
                 <div class="flashcard-content">
-                    <p>PTAC porteur 2 essieux</p>
+                    <p>Calculer la capacité de stockage</p>
                 </div>
             </div>
             <div class="flashcard-back">
                 <div class="flashcard-content">
-                    <p>19T</p>
+                    <p>Formules palettier</p>
                 </div>
             </div>
         </div>
@@ -129,32 +129,29 @@
             // Update the text content immediately
             if (flashcardFront) {
                 switch (flashcardFront.getAttribute('data-code').trim()) {
-                    case 'PTAC2':
-                        ShowPTAC3Card()
+                    case 'Capa':
+                        ShowNiveauxCard()
                         break;
-                    case 'PTAC3':
-                        ShowPTAC4Card()
+                    case 'Niveaux':
+                        ShowNbpaltravCard()
                         break;
-                    case 'PTAC4':
-                        ShowPTRA4Card()
+                    case 'Nbpaltrav':
+                        ShowNbtravCard()
                         break;
-                    case 'PTRA4':
-                        ShowPTRA5Card()
+                    case 'Nbtrav':
+                        ShowNbpalCard()
                         break;
-                    case 'PTRA5':
-                        ShowCUporteurCard()
+                    case 'Nbpal':
+                        ShowPoidslisseCard()
                         break;
-                    case 'CUporteur':
-                        ShowCUarticuléCard()
+                    case 'Poidslisse':
+                        ShowPoidséchelleCard()
                         break;
-                    case 'CUarticulé':
-                        ShowMMAisoléCard()
+                    case 'Poidséchelle':
+                        ShowAlléeCard()
                         break;
-                    case 'MMAisolé':
-                        ShowMMAarticuléCard()
-                        break;
-                    case 'MMAarticulé':
-                        ShowPTAC2Card()
+                    case 'Allée':
+                        ShowCapaCard()
                         break;
                 }
             }
@@ -178,34 +175,30 @@
             // Update the text content immediately
             if (flashcardFront) {
                 switch (flashcardFront.getAttribute('data-code').trim()) {
-                    case 'PTAC2':
-                        ShowMMAarticuléCard();
+                    case 'Capa':
+                        ShowAlléeCard()
                         break;
-                    case 'PTAC3':
-                        ShowPTAC2Card();
+                    case 'Niveaux':
+                        ShowCapaCard()
                         break;
-                    case 'PTAC4':
-                        ShowPTAC3Card()
+                    case 'Nbpaltrav':
+                        ShowNiveauxCard()
                         break;
-                    case 'PTRA4':
-                        ShowPTAC4Card()
+                    case 'Nbtrav':
+                        ShowNbpaltravCard()
                         break;
-                    case 'PTRA5':
-                        ShowPTRA4Card()
+                    case 'Nbpal':
+                        ShowNbtravCard()
                         break;
-                    case 'CUporteur':
-                        ShowPTRA5Card()
+                    case 'Poidslisse':
+                        ShowNbpalCard()
                         break;
-                    case 'CUarticulé':
-                        ShowCUporteurCard()
+                    case 'Poidséchelle':
+                        ShowPoidslisseCard()
                         break;
-                    case 'MMAisolé':
-                        ShowCUarticuléCard()
-                        break;
-                    case 'MMAarticulé':
-                        ShowMMAisoléCard()
-                        break;
-                        
+                    case 'Allée':
+                        ShowPoidséchelleCard()
+                        break; 
                 }
             }
 
@@ -215,80 +208,73 @@
             }, 300); // Delay to allow the transition to be applied
         }
 
-        function ShowPTAC2Card()
+        function ShowCapaCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'PTAC2');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>PTAC porteur 2 essieux</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>19T</p></div>';
+            flashcardFront.setAttribute('data-code', 'Capa');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>Calculer la capacité de stockage</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Formules palettier</p></div>';
         }
 
-        function ShowPTAC3Card()
+        function ShowNiveauxCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'PTAC3');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>PTAC porteur 3 essieux</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>26T</p></div>';
+            flashcardFront.setAttribute('data-code', 'Niveaux');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>1. Calculer le nombre de niveaux</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>[Hauteur disponible sous ferme - hauteur du niveau 1) / hauteur d\'un niveau supérieur] + 1 niveau</p></div>';
         }
 
-        function ShowPTAC4Card()
+        function ShowNbpaltravCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'PTAC4');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>PTAC porteur 4 essieux</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>32T</p></div>';
+            flashcardFront.setAttribute('data-code', 'Nbpaltrav');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>2. Calculer le nombre de palettes par travées</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>= Nombre de niveaux x nombre de palettes par alvéole</p></div>';
         }
-        function ShowPTRA4Card()
+        function ShowNbtravCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'PTRA4');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>PTRA véhicule articulé jusqu\'à 4 essieux</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>38T</p></div>';
+            flashcardFront.setAttribute('data-code', 'Nbtrav');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>3. Calculer le nombre de travées</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>a. Calculer la longueur disponible</p><p>b. [(Longueur disponible - largeur d\'un montant d\'échelle) / (longueur d\'une lisse + largeur d\'un montant d\'échelle)]</p><p>arrondi à l\'entier inférieur</p></div>';
         }
-        function ShowPTRA5Card()
+        function ShowNbpalCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'PTRA5');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>PTRA véhicule articulé 5 essieux et +</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>44T</p></div>';
+            flashcardFront.setAttribute('data-code', 'Nbpal');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>4. Calculer le nombre de palettes pouvant être stockées</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>= Nombre de palettes par travée x nombre de travées</p></div>';
         }
-        function ShowCUporteurCard()
+        function ShowPoidslisseCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'CUporteur');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>CU porteur</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>CU = MMA - PV</p></div>';
+            flashcardFront.setAttribute('data-code', 'Poidslisse');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>5. Vérifier le poids supporté par la lisse</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Poids d\'une charge palettisée x nombre de palettes par alvéole</p><p>A comparer avec le poids supporté</p></div>';
         }
-        function ShowCUarticuléCard()
+        function ShowPoidséchelleCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'CUarticulé');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>CU véhicule articulé</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>CU = MMA - </p><p>(PV tracteur + PV semi)</p></div>';
+            flashcardFront.setAttribute('data-code', 'Poidséchelle');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>6. Vérifier le poids supporté par une échelle (d\'extrémité et intermédiaire)</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Poids d\'une charge palettisée x nombre de palettes par alvéole x nombre de niveaux (hors niveau 1 au sol)</p><p>A comparer avec le poids supporté</p></div>';
         }
-        function ShowMMAisoléCard()
+        function ShowAlléeCard()
         {
             const flashcardFront = document.querySelector('.flashcard-front');
             const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'MMAisolé');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>MMA véhicule isolé</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>= PTAC</p></div>';
+            flashcardFront.setAttribute('data-code', 'Allée');
+            flashcardFront.innerHTML = '<div class="flashcard-content"><p>7. Dimensions de l\'allée de stockage</p></div>';
+            flashcardBack.innerHTML = '<div class="flashcard-content"><p>Longueur palette + largeur minimale de l\'allée de stockage</p><p>A comparer avec les mètres disponibles</p></div>';
         }
-        function ShowMMAarticuléCard()
-        {
-            const flashcardFront = document.querySelector('.flashcard-front');
-            const flashcardBack = document.querySelector('.flashcard-back');
-            flashcardFront.setAttribute('data-code', 'MMAarticulé');
-            flashcardFront.innerHTML = '<div class="flashcard-content"><p>MMA véhicule articulé</p></div>';
-            flashcardBack.innerHTML = '<div class="flashcard-content"><p>= La plus petite valeur</p><p>soit PTRA véhicule tracteur</p><p>soit Somme PV tracteur + PTAC semi</p></div>';
-        }
+      
     </script>
 </body>
 </html>
